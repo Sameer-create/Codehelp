@@ -14,29 +14,7 @@ router.get('/',(req,res)=>{
 });
 
 // collecting data using promises
-/*router.post('/register',(req,res)=> {
-    const {name, email, phone, Password, cPassword, cc, cf, lc} = req.body;
-    
-    // if any field is not filled
-    if(!name || !email || !phone || !Password || !cPassword || !cc || !cf || !lc){
-        return res.status(422).json({error: "please fill all the fields properly"});
-    }
 
-    // If user already register with the same email or user exist already
-    User.findOne({email: email})
-    .then((userExist) => {
-        if(userExist){
-            return res.status(422).json({error: "Email Already exist"});
-        }
-
-        const user = new User({name, email, phone, Password, cPassword, cc, cf, lc})
-
-        user.save().then(()=>{
-            res.status(201).json({message:"user registered successfully"});
-        }).catch((err)=>res.status(500).json({error:"Failed to register"}));
-    }).catch(err =>{console.log(err);})
-
-});*/
 
 router.use(cookieParser());
 
