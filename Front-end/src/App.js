@@ -4,10 +4,12 @@ import Home from './pages/Home';
 import Navbar from './pages/Navbar';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import About from './pages/About';
+import Profile from './pages/Profile';
 import Contact from './pages/Contact';
 import TotalUser from './pages/TotalUser';
+import BlogCreate from './pages/BlogCreate';
 import './App.css';
+import BlogShow from './pages/BlogShow';
 
 function App() {
     return (
@@ -17,8 +19,8 @@ function App() {
         <Route exact path="/">
             <Home />
         </Route>
-        <Route path="/about">
-            <About />
+        <Route path="/profile">
+            <Profile />
         </Route>
         <Route path="/login">
             <Login />
@@ -31,6 +33,12 @@ function App() {
         </Route>
         <Route path="/contact">
             <Contact />
+        </Route>
+        <Route path="/blogshow">
+            <BlogShow />
+        </Route>
+        <Route path="/blogcreate">
+            <BlogCreate />
         </Route>
         
         </>

@@ -8,6 +8,6 @@ mongoose.connect(DB,{
     useUnifiedTopology:true,
     useFindAndModify:false
 }).then(()=>{
-    console.log(`connection successfull`);
-}).catch((err) => console.log(`No connection`));
+    console.log('connected to database');
+}).catch((err) => console.log(`Not connected to database`));
 
