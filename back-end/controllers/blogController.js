@@ -9,7 +9,7 @@ const blog_create= async (req,res)=>{
         return res.status(422).json({ error: "please fill all the fields properly" });
     }
     try{
-         blog.blogName=userLogin.name;
+         blog.blogName=userLogin.userName;
         const result=  await  blog.save();
        res.status(201).json({message:"redircetd on blogs page"})
      console.log('blog createed suceessfully')
@@ -24,7 +24,7 @@ const blog_show = async (req,res)=>{
    
     const blog= await   Blog.find()
    res.status(200).send(blog)
-  console.log('total user page run successfully')
+ 
   
    
 }

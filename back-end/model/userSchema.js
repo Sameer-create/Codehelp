@@ -11,8 +11,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    phone: {
-        type: Number,
+   userName: {
+        type: String,
         required: true
     },
     Password: {
@@ -26,6 +26,14 @@ const userSchema = new mongoose.Schema({
     myFriends: {
         type: [String],
         required: false,
+    },
+    myFriendsCount:{
+        type:Number,
+        required:false,
+    },
+    myRanking:{
+        type:[String],
+        required:false,
     },
 })
 

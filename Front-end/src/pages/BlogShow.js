@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-
-
+import { NavLink } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 const BlogShow = () => {
 
     const [list, setList] = useState([]);
@@ -40,10 +40,13 @@ const BlogShow = () => {
     const Blogs = list.map((o)=>{
         return(
             <div>
-                <h3>{o.blogTitle}</h3><hr/>
-                <p>{o.blogSnippet}</p><hr/>
-                <p>{o.blogBody}</p>
-                <p>{o.blogName}</p>
+                <h2 class="blogtitle" >{o.blogTitle}</h2>
+                <p >By  <p class="blogname" > {o.blogName}</p></p>  
+                <p class="blogsnippet" >{o.blogSnippet}</p>
+                <p class="blogbody">{o.blogBody}</p>
+                <hr></hr>
+                
+                
             </div>
         );
     });
@@ -55,7 +58,10 @@ const BlogShow = () => {
             <form method="GET">
             <hr />
             <h2>Blogs</h2>
-            <a href='/blogcreate'>Write Blog</a>
+        
+           <Button  variant="contained"className="writeblogclass" color="primary">
+                        <NavLink to="/blogcreate" className="nav__link writeblog">Write Blog</NavLink>
+                      </Button>
             <div>
                 {Blogs}
             </div>
@@ -66,5 +72,7 @@ const BlogShow = () => {
     )
 
 }
+
+
 
 export default BlogShow

@@ -414,7 +414,7 @@ footer {
 
 
 .button1 {
-  background-color: #ff7600; 
+  background-color: #51f5a8; 
   border: none;
   color: white;
   padding: 0px 10px;
@@ -427,15 +427,20 @@ footer {
 
 
 
-/* index styles */
-.blogs a{
-  display: block;
-  margin: 40px 0;
-  padding-left: 30px;
-  border-left: 6px solid crimson;
+/* Blog show */
+
+.blogtitle{
+  color: #dc3545;
+
 }
-.blogs a:hover h3{
-  color: crimson;
+.blogname{
+  color:rgb(223, 115, 96)}
+
+  .blogbody{
+    margin-left:30px;
+  }
+.writeblog{
+
 }
 
 /* details styles */
@@ -481,4 +486,24 @@ textarea{
   border: 0;
   font-size: 1.2em;
   cursor: pointer;
+}
+
+.update-heading{
+  color: #111;
+}
+
+/* Profile and resources page css*/
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: skyblue;
+  margin: 100px auto 0;
+  word-break: break-all;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+} 
+.profile-text{
+  color: #111;
 }

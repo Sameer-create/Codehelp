@@ -10,6 +10,9 @@ import TotalUser from './pages/TotalUser';
 import BlogCreate from './pages/BlogCreate';
 import './App.css';
 import BlogShow from './pages/BlogShow';
+import UpdateProfile from './pages/UpdateProfile';
+import Resources from './pages/Resources';
+import OtherProfile from './pages/OtherProfile';
 
 function App() {
     return (
@@ -28,6 +31,9 @@ function App() {
         <Route path="/signup">
             <Signup />
         </Route>
+        <Route path="/resources">
+            <Resources />
+        </Route>
         <Route path="/totaluser">
             <TotalUser />
         </Route>
@@ -39,6 +45,12 @@ function App() {
         </Route>
         <Route path="/blogcreate">
             <BlogCreate />
+        </Route>
+        <Route path="/updateprofile">
+            <UpdateProfile />
+        </Route>
+        <Route path="/otherprofile">
+            <OtherProfile />
         </Route>
         
         </>
