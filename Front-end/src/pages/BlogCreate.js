@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {useHistory} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 function BlogCreate() {
 
@@ -60,7 +61,8 @@ function BlogCreate() {
         value={bloguser.blogBody}
         onChange={handleInputs}
         placeholder="Blog body"></textarea>
-      <button onClick={postblog}>Submit</button>
+        <div className="center">
+      <Button variant="contained" className="writeblogclass" color="primary" onClick={postblog}>Submit</Button></div>
     </form>
     </div>
     </div>

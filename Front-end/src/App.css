@@ -426,6 +426,11 @@ footer {
     cursor: pointer;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+}
+
 
 /* Blog show */
 
