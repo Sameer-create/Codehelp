@@ -387,3 +387,118 @@ footer {
   font-weight: 600;
   color: #0062cc;
 }
+
+
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #111;}
+
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ff7600;
+  color: white;
+}
+
+
+.button1 {
+  background-color: #51f5a8; 
+  border: none;
+  color: white;
+  padding: 0px 10px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 15px;
+  
+  cursor: pointer;
+}
+
+
+
+/* index styles */
+.blogs a{
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid crimson;
+}
+.blogs a:hover h3{
+  color: crimson;
+}
+
+/* details styles */
+.details{
+  position: relative;
+}
+.delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+}
+.delete:hover{
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+
+/* create styles */
+.create-blog form{
+  max-width: 400px;
+  margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea{
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+.create-blog label{
+  display: block;
+  margin-top: 24px;
+}
+textarea{
+  height: 120px;
+}
+.create-blog button{
+  margin-top: 20px;
+  background: crimson;
+  color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.update-heading{
+  color: #111;
+}
+
+/* Profile and resources page css*/
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: skyblue;
+  margin: 100px auto 0;
+  word-break: break-all;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+} 
+.profile-text{
+  color: #111;
+}

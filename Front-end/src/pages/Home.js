@@ -1,41 +1,78 @@
-import React from 'react';
+import { Grid } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Home extends React.Component{
-    render(){
-        return (
-        <div>
-            
-            <div className="main-grid">
-        <header>
-        <nav className="nav">
-            
-        </nav>
-        </header>
+const Home = () => {
 
-        <main>
-            <h1 className="title">CodeHelp</h1>
-            <p className="location">Snitcher Tool</p>
-            <a href="https://leetcode.com/" target="_blank">
-            <img src="assests/img/lc.jfif" alt="" className="secondary-image"/>
-            </a>
-            <div className="secondary-images">
-                <a href="https://codeforces.com/" target="_blank">
-                <img src="assests/img/cf.jfif" alt="" className="secondary-image"/>
-                </a>
-            </div>
-            <div className="secondary-images">
-            <a href="https://www.codechef.com/" target="_blank">
-                <img src="assests/img/cc.jfif" alt="" className="secondary-image"/>
-                </a>
-            </div>
-            <p className="description">With the help of this tool you'll get notifications of the contest or event of the platform you choose.</p>
-            <NavLink className="btn" to="/signup">Start Now</NavLink>
-            <br></br>
-        </main>
-    </div>
-        </div>
-        );
+    const [userData, setUserData] = useState([]);
+    const callHome = async () => {
+        try {
+            const res = await fetch('/contest', {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                credentials: "include"
+            });
+            const data = await res.json();
+            console.log(data);
+
+            if (!res.status === 200) {
+                const error = new Error(res.error);
+                throw error;
+            }
+            setUserData(data);
+        } catch (err) {
+            console.log(err);
+        }
     }
+    useEffect(() => {
+        callHome();
+    }, []);
+    console.log(userData);
+    
+    const Show = userData.map((o, index)=>{
+        return(
+            
+            
+
+            <div className="col-md-4 col-10 mx-auto">
+                    
+            <div className="container table " >
+            <div className="card text-center">
+            <h5 className="card-header">
+                <strong key={index}>{o.url}</strong>
+            </h5>
+            <div className="card-body">
+            <h6 className="card-title" key={index}>{o.title}</h6>
+                <div>
+                <p className="card-text" key={index}>{o.start}</p>
+                <p className="card-text" key={index}>{o.end}</p>
+                </div>
+                <div id="button">
+                <a href={o.host} id="button" key={index} className="btn-start-now">{o.host}</a>
+                </div>
+            </div>
+            <div className="card-footer text-muted" key={index}>
+                {o.duration}
+              </div>
+            </div>
+            </div>
+
+            </div>
+            
+        )
+    })
+    return (
+        <>
+            <form method="GET">
+            <div className="row">
+                {Show}
+            </div>
+
+            </form>
+        </>
+    );
 }
 export default Home

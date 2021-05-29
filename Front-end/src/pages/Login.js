@@ -5,7 +5,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 const Login = () => {
     const history = useHistory();
 
-    const [email, setEmail] = useState('');
+    const [userName, setUserName] = useState('');
     const [Password, setPassword] = useState('');
 
     const loginUser = async (e) =>{
@@ -17,7 +17,7 @@ const Login = () => {
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                email, Password
+                userName, Password
             })
         });
 
@@ -28,7 +28,7 @@ const Login = () => {
             console.log("Invalid Credentials");
         }else{
             window.alert("Login Success");
-            history.push("/about");
+            history.push("/profile");
         }
 
     }
@@ -41,10 +41,10 @@ const Login = () => {
                 <span><i class="icon icon-user"></i></span>
             </div>
             <div class="form-group">
-                <input type="text" name="email" class="form-control item" id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"/>
+                <input type="text" name="userName" class="form-control item" id="email"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder="UserName"/>
             </div>
             <div class="form-group">
                 <input type="password" name="Password" class="form-control item" id="password" 

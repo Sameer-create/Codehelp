@@ -1,5 +1,4 @@
 import React,{ useState } from 'react';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink, useHistory } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ const Signup = () => {
         const history = useHistory();
 
         const[user, setUser] = useState({
-            name:"",email:"",phone:"",Password:"",cPassword:""
+            name:"",email:"",userName:"",Password:"",cPassword:""
         });
 
         let name, value;
@@ -21,7 +20,7 @@ const Signup = () => {
        const postData = async(e) =>{
             e.preventDefault();
 
-            const { name, email, phone, Password, cPassword} = user;
+            const { name, email, userName, Password, cPassword} = user;
 
             const res = await fetch("/register", {
                 method: "POST",
@@ -29,7 +28,7 @@ const Signup = () => {
                     "Content-Type" : "application/json"
                 },
                 body: JSON.stringify({
-                    name, email, phone, Password, cPassword
+                    name, email, userName, Password, cPassword
                 })
             });
             const data = await res.json();
@@ -65,10 +64,10 @@ const Signup = () => {
                 placeholder="Email"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control item" name="phone" id="phone-number"
-                value={user.phone}
+                <input type="text" class="form-control item" name="userName" id="phone-number"
+                value={user.userName}
                 onChange={handleInputs}
-                placeholder="Mobile Number"/>
+                placeholder="UserName"/>
             </div>
             <div class="form-group">
                 <input type="password" class="form-control item" name="Password" id="password"
