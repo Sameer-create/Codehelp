@@ -39,10 +39,10 @@ const BlogShow = () => {
 
     const Blogs = list.map((o)=>{
         return(
-            <div>
-                <h2 class="blogtitle" >{o.blogTitle}</h2>
-                <p >By  <p class="blogname" > {o.blogName}</p></p>  
-                <p class="blogsnippet" >{o.blogSnippet}</p>
+            <div class="blogshow">
+                <h4 class="blogtitle" ><b>{o.blogTitle}</b>: {o.blogSnippet}</h4>
+                <hr/>
+                <p class="blogname" ><b>By {o.blogName}</b></p>
                 <p class="blogbody">{o.blogBody}</p>
                 <hr></hr>
                 
@@ -57,11 +57,14 @@ const BlogShow = () => {
         <div className="container">
             <form method="GET">
             <hr />
-            <h2>Blogs</h2>
+            <div className="flexbox"> 
+            <h2 className="flex">Blogs</h2>
+        <div className="button"><Button  variant="contained" className="writeblogclass" color="primary">
+                     <NavLink to="/blogcreate" className="nav__link writeblog">Write Blog</NavLink>
+                   </Button></div>
         
-           <Button  variant="contained"className="writeblogclass" color="primary">
-                        <NavLink to="/blogcreate" className="nav__link writeblog">Write Blog</NavLink>
-                      </Button>
+            </div>
+           
             <div>
                 {Blogs}
             </div>
@@ -69,6 +72,7 @@ const BlogShow = () => {
 
         </form>   
         </div>
+        
     )
 
 }
