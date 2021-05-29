@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import {useHistory} from 'react-router-dom';
 const BlogShow = () => {
-
+    const history = useHistory();
     const [list, setList] = useState([]);
 
 
@@ -52,15 +53,17 @@ const BlogShow = () => {
     });
     
     
-
+const writeblog = ()=>{
+    history.replace("/blogcreate");
+}
     return (
         <div className="container">
             <form method="GET">
             <hr />
             <div className="flexbox"> 
             <h2 className="flex">Blogs</h2>
-        <div className="button"><Button  variant="contained" className="writeblogclass" color="primary">
-                     <NavLink to="/blogcreate" className="nav__link writeblog">Write Blog</NavLink>
+        <div className="button"><Button  onClick={writeblog} variant="contained" className="writeblogclass" color="primary">
+                     Write Blog
                    </Button></div>
         
             </div>
