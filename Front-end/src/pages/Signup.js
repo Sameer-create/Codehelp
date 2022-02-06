@@ -55,18 +55,21 @@ const Signup = () => {
             <div class="form-icon">
                 <span><i class="icon icon-user"></i></span>
             </div>
+            
             <div class="form-group">
                 <input type="text" class="form-control item" name="userName" id="phone-number"
                 value={user.userName}
                 onChange={handleInputs}
                 placeholder="UserName"/>
             </div>
+            
             <div class="form-group">
                 <input type="text" class="form-control item" name="name" id="username"
                 value={user.name}
                 onChange={handleInputs}
                 placeholder="Your Name"/>
             </div>
+            
             <div class="form-group">
                 <input type="text" class="form-control item" name="email" id="email"
                 value={user.email}
@@ -80,15 +83,18 @@ const Signup = () => {
                 onChange={handleInputs}
                 placeholder="Password"/>
             </div>
+            
             <div class="form-group">
                 <input type="password" class="form-control item" name="cPassword" id="cpassword"
                 value={user.cPassword}
                 onChange={handleInputs}
                 placeholder="Confirm Password"/>
             </div>
+            
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account" onClick={postData}>Create Account</button>
             </div>
+            
             <div class="form-group">
                 <NavLink to="/login" className="nav__link1">Already have an Account?</NavLink>
             </div>
