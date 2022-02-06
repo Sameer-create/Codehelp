@@ -1,4 +1,6 @@
+
 import React,{ useState } from 'react';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink, useHistory } from 'react-router-dom';
 
@@ -11,6 +13,7 @@ const Signup = () => {
 
         let name, value;
        const handleInputs = (e) => {
+        
         name = e.target.name;
         value = e.target.value;
 
@@ -45,6 +48,7 @@ const Signup = () => {
        }
 
     return (
+        
         <div>
             <div class="registration-form">
         <form method="POST">

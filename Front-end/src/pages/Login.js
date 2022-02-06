@@ -35,6 +35,7 @@ const Login = () => {
    
     return (
         <div>
+
             <div class="registration-form">
         <form method="POST">
             <div class="form-icon">
@@ -60,6 +61,7 @@ const Login = () => {
             </div>
         </form>
         </div>
+        
         </div>
     )
 
